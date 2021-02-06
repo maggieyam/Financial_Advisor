@@ -3,6 +3,7 @@ import {merge} from 'lodash';
 
 const preferenceReducer = (state = {}, action) => {
   Object.freeze(state);
+  return null;
 };
 
 export default preferenceReducer;

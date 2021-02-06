@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from 'react';
+import { Route } from 'react-router-dom';
+import Navbar from './navbar/navbar';
+import Preference from './preference/preference';
+import Portfolio from './portfolio/portfolio';
 
 const App = () => {
   return(
-      <div className="App">
-        Hello
+      <div>
+        <header>
+          <Navbar />
+        </header>
+
+        <Route exact path="/home" component={Preference} />
+        <Route exact path="/calculator" component={Portfolio} />
       </div>
   )
 }
