@@ -1,0 +1,45 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    margin-bottom: 20px;
+    background-image: linear-gradient(45deg, #0084bf, #0c8996);
+}
+
+.home-icon {
+    margin-left: 25px;
+    color: aliceblue;
+   
+}
+
+.title {
+    width: 95%;
+    text-align: center;
+    font-size: 50px;
+    color: rgba(255,255,255,0.85);
+    font-family: "Roboto", sans-serif;
+
+}
+
+@media only screen and (max-width: 680px) {
+    .home-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .title{
+        font-size: 36px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .home-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .title{
+        font-size: 22px;
+    }
+}
