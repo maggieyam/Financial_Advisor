@@ -11,7 +11,7 @@ const App = () => {
           <Navbar />
         </header>
 
-        <Route exact path="/" component={PreferenceContainer} />
+        <Route exact path="/" component={PreferenceContainer} /> 
         {/* <Route exact path="/calculator" component={Portfolio} /> */}
       </div>
   )
