@@ -1,6 +1,8 @@
+import './preferences.css';
+
 const RiskScaleButton = ({ level }) => {
     return(
-        <button key={level} className="risk-scale-button">
+        <button key={level} className="risk-scale-btn">
             {level}
         </button>
     )

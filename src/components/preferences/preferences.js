@@ -21,15 +21,16 @@ class Preference extends React.Component {
                  <h3>Please Select A Risk Level For Your Investment Portfolio</h3>
                  <div>
                      <div className="risk-scale-label">
-                         <label>Low</label>
-                         <label>High</label>
+                         <label id="low">Low</label>
+                         <label id="high">High</label>
                  </div>
                  <ul>
                     {preferences.map(preference => {
                         return(
-                            <RiskScaleButton level={preference.id}/>
+                            <RiskScaleButton level={preference.id} />
                         )
                     })}
+                    <button className="continue-btn">Continue</button>
                  </ul>
              </div>           
          </div>
