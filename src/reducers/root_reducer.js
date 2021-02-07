@@ -1,12 +1,12 @@
 
 import { combineReducers } from 'redux';
-import preference from './preference_reducer';
-import portfolio from './portfolio_reducer';
+import preferences from './preferences_reducer';
+// import portfolio from './portfolio_reducer';
 // import errors from './error_reducer';
 
 const rootReducer = combineReducers({
-    preference,
-    portfolio,
+    preferences,
+    // portfolio,
     // errors,
 })
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import Navbar from './navbar/navbar';
-// import Preference from './preference/preference';
+import PreferenceContainer from './preferences/preference_container';
 // import Portfolio from './portfolio/portfolio';
 
 const App = () => {
@@ -11,8 +11,8 @@ const App = () => {
           <Navbar />
         </header>
 
-        {/* <Route exact path="/home" component={Preference} />
-        <Route exact path="/calculator" component={Portfolio} /> */}
+        <Route exact path="/" component={PreferenceContainer} />
+        {/* <Route exact path="/calculator" component={Portfolio} /> */}
       </div>
   )
 }
