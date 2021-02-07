@@ -67,3 +67,12 @@ img {
   cursor: pointer;
 }
 
+text {
+  font-size: 6px;
+}
+
+svg {
+  margin-top: 50px;
+  text-align: center;
+  width: 30%;
+}
