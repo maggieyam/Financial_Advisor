@@ -6,10 +6,38 @@ import PreferenceTable from './preference_table';
 import logo from './donut_chart.png';
 
 class Preference extends React.Component {
-     constructor(props){
+    constructor(props){
         super(props);
+        this.state = {
+            level: 0
+        };
+        this.update = this.update.bind(this);
     }   
-    
+
+    updateRowColor(row, level) {
+        if (level % 2 === 0) {
+                row.style.backgroundColor = 'white';
+        } else {
+                row.style.backgroundColor = '#f9f9f9';
+        }
+    }
+
+    update(id){
+        const level = this.state.level;
+        const btn = document.getElementById(`${id}`);
+        const prevLevel = document.getElementById(`${level}`);
+        const row = document.getElementById(`row-${id}`);
+        const prevRow = document.getElementById(`row-${level}`);
+
+        btn.style.backgroundColor = 'yellow';
+        row.style.backgroundColor = 'yellow';
+
+        if (prevLevel) prevLevel.style.backgroundColor = 'white';
+        if (prevRow) this.updateRowColor(prevRow, level)
+            
+        this.setState({level: id});
+    }
+
     componentDidMount() {
         this.props.fetchPreferences();
     }
@@ -17,7 +45,7 @@ class Preference extends React.Component {
     render() {
         const { preferences } = this.props;
         if (!preferences) return null;
-        const url = "https://conceptdraw.com/a3039c3/p1/preview/640/pict--1-sector-donut-chart-management-indicators---vector-stencils-library.png--diagram-flowchart-example.png"
+        
         return(
             <div className="form-body">
                  <h3>Please Select A Risk Level For Your Investment Portfolio</h3>
@@ -29,10 +57,15 @@ class Preference extends React.Component {
                  <ul>
                     {preferences.map(preference => {
                         return(
-                            <RiskScaleButton level={preference.id} />
+                            <RiskScaleButton 
+                                level={preference.id} 
+                                update = {this.update}
+                                />
                         )
                     })}
-                    <button className="continue-btn">Continue</button>
+                    <Link to="/">
+                        <button className="continue-btn">Continue</button>
+                    </Link>
                  </ul>
                  <div className="img_table_wrapper">
                     <PreferenceTable preferences={preferences}/>

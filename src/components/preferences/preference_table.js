@@ -16,7 +16,7 @@ const PreferenceTable = ({preferences}) => {
             <tbody>
                 {preferences.map((level, idx) => {
                     return(
-                        <tr className={idx % 2 === 0 ? "row-grey" : null}>
+                        <tr className={idx % 2 === 0 ? "row-grey" : null} id={`row-${idx + 1}`}>
                             {Object.values(level).map((item, idx) => {
                                 return(
                                     <td id={idx === 0 ? "risk": null}>
