@@ -59,20 +59,13 @@ table {
   /* margin: auto; */
 }
 
-img {
-  width: 50px;
-  height: 45px;
-  border: 3px solid black;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 text {
   font-size: 6px;
 }
 
-svg {
+.chart > svg {
   margin-top: 50px;
   text-align: center;
   width: 30%;
 }
+
