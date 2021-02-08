@@ -57,6 +57,14 @@ button.continue-btn {
     margin: auto;
 }
 
+.btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0;
+}
+
 table {
     margin-right: 0;
 }

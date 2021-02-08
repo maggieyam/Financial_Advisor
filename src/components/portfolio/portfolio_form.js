@@ -88,7 +88,7 @@ class PortfolioForm extends React.Component {
         return(
             <div>
                 <form onSubmit={(e) => this.handleSubmit(e)} className="portfolio-form">
-                    <header>
+                    <header className="portfolio-header">
                         <h2>Please select your portfolio</h2>
                         {values.includes(undefined) || values.includes(NaN) ? 
                         this.disableSubmitBtn() : 

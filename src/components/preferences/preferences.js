@@ -59,7 +59,7 @@ class Preference extends React.Component {
                          <label id="high">High</label>
                  </div>
 
-                 <ul>
+                 <div className="btn-wrapper">
                     {preferences.map(preference => {
                         return(
                             <RiskScaleButton 
@@ -73,7 +73,7 @@ class Preference extends React.Component {
                         <button className="continue-btn" disabled>Continue</button>}
                         
                     </Link>
-                 </ul>
+                 </div>
 
                  <div className="img_table_wrapper">
                     <PreferenceTable preferences={preferences}/>
