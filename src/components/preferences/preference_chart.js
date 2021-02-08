@@ -5,8 +5,9 @@ import '../../resize.css';
 const DonutChart = (props) => {
     let data = [];
     const values = Object.values(props.preference)
+    
     const color = ['red', 'yellow', 'blue', 'green', 'purple'];
-    values.pop();
+    values.shift();
     values.map((value, idx) => {
         if (value !== 0) {
             data.push({

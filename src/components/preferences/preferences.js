@@ -12,7 +12,12 @@ class Preference extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            level: 0
+            id: 0,
+            bonds: 0,
+            largeCap: 20,
+            midCap: 20,
+            foreign: 5,
+            smallCap: 15
         };
         this.update = this.update.bind(this);
     }   
@@ -30,7 +35,15 @@ class Preference extends React.Component {
     }
 
     update(id){
-        const level = this.state.level;
+        const level = this.state.id;
+        const { 
+                bonds, 
+                largeCap, 
+                midCap, 
+                foreign, 
+                smallCap 
+            } = this.props.preferences[id - 1];
+
         const btn = document.getElementById(`${id}`);
         const prevLevel = document.getElementById(`${level}`);
         const row = document.getElementById(`row-${id}`);
@@ -42,14 +55,16 @@ class Preference extends React.Component {
 
         if (prevLevel) prevLevel.style.backgroundColor = 'white';
         if (prevRow) this.updateRowColor(prevRow, level)
+
+
             
-        this.setState({level: id});
+        this.setState({id, bonds, largeCap, midCap, foreign, smallCap});
 
     }
 
     render() {
         const { preferences } = this.props;
-        const risk  = this.state.level;
+        const risk  = this.state.id;
         if (!preferences) return null;
 
         return(
@@ -67,6 +82,7 @@ class Preference extends React.Component {
                             <RiskScaleButton 
                                 level={preference.id} 
                                 update = {this.update}
+                                key={preference.id}
                                 />
                         )
                     })}
@@ -82,14 +98,7 @@ class Preference extends React.Component {
                  </div>
 
                  <div className="chart">
-                    <DonutChart preference={{
-                        "id": 30,
-                        "bonds": 10,
-                        "largeCap": 20,
-                        "midCap": 20,
-                        "foreign": 5,
-                        "smallCap": 15
-                    }}/>
+                    <DonutChart preference={this.state}/>
                  </div>
              </div>           
          </div>
