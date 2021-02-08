@@ -55,6 +55,7 @@ button.continue-btn {
     justify-content: center;
     align-items: flex-start;
     margin: auto;
+    margin-top: 30px;
 }
 
 .btn-wrapper {
@@ -63,9 +64,29 @@ button.continue-btn {
   justify-content: center;
   align-items: center;
   padding-left: 0;
+  margin-top: 10px;
 }
 
 table {
     margin-right: 0;
 }
 
+.bonds {
+    background-color: #FF6666;
+}
+
+.lg {
+    background-color: #FFFF66;
+}
+
+.mid {
+    background-color: #0099FF;
+}
+
+.foreign {
+    background-color: #99FF99;
+}
+
+.sm {
+    background-color: #9966FF;
+}

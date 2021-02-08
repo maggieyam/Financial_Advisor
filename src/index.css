@@ -52,7 +52,7 @@ text {
 }
 
 .chart > svg {
-  margin-top: 50px;
+  margin-top: 10px;
   text-align: center;
   width: 30%;
 }

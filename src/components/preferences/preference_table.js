@@ -7,11 +7,11 @@ const PreferenceTable = ({preferences}) => {
             <thead>
                 <tr>
                     <th id="risk">Risk</th>
-                    <th>Bonds %</th>
-                    <th>Large Cap %</th>
-                    <th>Mid Cap %</th>
-                    <th>Foreign %</th>
-                    <th>Small Cap %</th>
+                    <th className="bonds">Bonds %</th>
+                    <th className="lg">Large Cap %</th>
+                    <th className="mid">Mid Cap %</th>
+                    <th className="foreign">Foreign %</th>
+                    <th className="sm">Small Cap %</th>
                 </tr>
             </thead>
             <tbody>

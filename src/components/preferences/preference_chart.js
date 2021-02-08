@@ -6,7 +6,7 @@ const DonutChart = (props) => {
     let data = [];
     const values = Object.values(props.preference)
     
-    const color = ['red', 'yellow', 'blue', 'green', 'purple'];
+    const color = ['#FF6666', '#FFFF66', '#0099FF', '#99FF99', '#9966FF'];
     values.shift();
     values.map((value, idx) => {
         if (value !== 0) {
@@ -25,7 +25,7 @@ const DonutChart = (props) => {
             labelPosition={65}
             lineWidth={75}
             paddingAngle={0}
-            radius={50}
+            radius={40}
             viewBoxSize={[100, 100]}
         />
         </>
