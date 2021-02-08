@@ -8,13 +8,16 @@
 }
 
 .home-icon {
-    margin-left: 25px;
+    position: absolute;
+    width: 12px;
+    left: 50px;
+    top: 34px;
     color: aliceblue;
    
 }
 
 .title {
-    width: 95%;
+    width: 100%;
     text-align: center;
     font-size: 50px;
     color: rgba(255,255,255,0.85);
