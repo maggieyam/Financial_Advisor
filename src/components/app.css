@@ -1,9 +1,0 @@
-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-}
-.counter-text {
-  padding-left: 10px;
-}
