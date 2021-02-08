@@ -17,12 +17,6 @@
     align-items: center;
 }
 
-
-.portfolio-form {
-    margin: auto;
-    width: 100%;
-}
-
 .portfolio-header {
     width: 100%;
     display: flex;
@@ -42,13 +36,14 @@
     margin-right: 25px;
 }
 
-.portfolio-table {
-    width: 800px;
+table.portfolio-table {
+    width: 100%;
 }
 
 .portfolio-thead > tr, .portfolio-tbody > tr, .portfolio-tbody td{
     display: flex;
     justify-content: stretch;
+    align-items: center;
     width: 100%;
     
 }
@@ -58,6 +53,9 @@
 
 .header {
     width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .inputs {
@@ -73,21 +71,24 @@ li {
     text-align: left;
     font-size: 20px;
     font-weight: 400;
-    margin: 15px;
+    margin: 10px;
     margin-left: 45px;
 }
 
 .recommendation {
     text-align: left;
+    margin: 40px 10px 20px 10px;
 }
 
 ul {
-    width: 95%;
+    width: 94%;
     min-height: 150px;
     padding: 15px;
     border: 2px solid #d3d3d3;
     border-radius: 16px;
+    margin: 10 5px;
 }
+
 
 
 

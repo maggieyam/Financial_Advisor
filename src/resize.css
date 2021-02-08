@@ -15,12 +15,27 @@
         width: 560px;
     }
 
-    h3, label {
-        font-size: 22px;
+    h3, label, td {
+        font-size: 20px;
     }
 
-    ul {
-        margin-top: 8px;
+    th,.portfolio-tbody td {
+        font-size: 14px;
+    }
+
+    .portfolio-header, form.portfolio-form .recommendation {
+        margin-left: 15px;
+    }
+
+    table.portfolio-table {
+        width: 100%;
+    }
+    .portfolio-thead > tr, .portfolio-tbody > tr, .portfolio-tbody td{
+        width: 100%;
+    }
+
+    .form-body {
+        width: 100%;
     }
 
     #high {
@@ -35,19 +50,39 @@
         font-size: 14px;
     }
 
-    .continue-btn {
+    button.continue-btn {
         width: 40px;
         height: 32px;
         font-size: 8px;
+    }
+
+    button#rebalance-btn {
+        width: 64px;
+        height: 32px;
+        font-size: 10px;
     }
 
     .risk-scale-label {
         width: 410px;
     }
 
-    h3, label {
-        font-size: 14px;
+    h1 {
+        font-size: 16px;
     }
+
+
+    h3, label {
+        font-size: 16px;
+    }
+
+    h2, th {
+        font-size: 13px;
+    }
+
+    td, li {
+        font-size: 12px;
+    }
+
 
     #high {
         margin-right: 60px;
@@ -69,15 +104,26 @@
         border: 1px solid black;
     }
 
+    button#rebalance-btn {
+        width: 54px;
+        height: 28px;
+        font-size: 8px;
+        border: 1px solid black;
+    }
+
     .risk-scale-label {
         width: 300px;
     }
 
-    h3, label {
+    h3, label, td{
         font-size: 10px;
     }
 
-    #high {
+    th, .portfolio-tbody td {
+        font-size: 10px;
+    }
+
+    #high{
         margin-right: 10px;
     }
 
@@ -91,19 +137,29 @@
         border: 1px solid black;
     }
 
-    button.continue-btn {
+    button.continue-btn  {
         width: 30px;
         height: 17px;
         font-size: 4px;
         border: 1px solid black;
     }
 
+    button#rebalance-btn {
+        width: 40px;
+        height: 20px;
+        font-size: 5px;
+    }
+
     .risk-scale-label {
         width: 220px;
     }
 
-    h3, label {
+    h3, label, td{
         font-size: 8px;
+    }
+
+    th, .portfolio-tbody td {
+        font-size: 7px;
     }
 
     ul {
