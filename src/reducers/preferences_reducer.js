@@ -6,6 +6,9 @@ const preferenceReducer = (state = {}, action) => {
   switch (action.type) {
     case 'RECEIVE_PREFERENCES':
       return action.preferences;
+    case 'RECEIVE_PREFERENCE':
+      const newState = {[action.preference.id]: action.preference}
+      return newState;
     default:
       return state;
   }

@@ -3,7 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import RiskScaleButton from './risk_scale_button';
 import PreferenceTable from './preference_table';
-import logo from './donut_chart.png';
+import DonutChart from './preference_chart';
+// import { PieChart } from 'react-minimal-pie-chart';
 
 class Preference extends React.Component {
     constructor(props){
@@ -13,6 +14,10 @@ class Preference extends React.Component {
         };
         this.update = this.update.bind(this);
     }   
+
+    componentDidMount() {
+        this.props.fetchPreferences();
+    }
 
     updateRowColor(row, level) {
         if (level % 2 === 0) {
@@ -28,24 +33,23 @@ class Preference extends React.Component {
         const prevLevel = document.getElementById(`${level}`);
         const row = document.getElementById(`row-${id}`);
         const prevRow = document.getElementById(`row-${level}`);
-
+        const continueBtn = document.getElementsByClassName('continue-btn');
         btn.style.backgroundColor = 'yellow';
         row.style.backgroundColor = 'yellow';
+        continueBtn.disabled = false;
 
         if (prevLevel) prevLevel.style.backgroundColor = 'white';
         if (prevRow) this.updateRowColor(prevRow, level)
             
         this.setState({level: id});
-    }
 
-    componentDidMount() {
-        this.props.fetchPreferences();
     }
 
     render() {
         const { preferences } = this.props;
+        const risk  = this.state.level;
         if (!preferences) return null;
-        
+
         return(
             <div className="form-body">
                  <h3>Please Select A Risk Level For Your Investment Portfolio</h3>
@@ -54,6 +58,7 @@ class Preference extends React.Component {
                          <label id="low">Low</label>
                          <label id="high">High</label>
                  </div>
+
                  <ul>
                     {preferences.map(preference => {
                         return(
@@ -63,13 +68,26 @@ class Preference extends React.Component {
                                 />
                         )
                     })}
-                    <Link to="/">
-                        <button className="continue-btn">Continue</button>
+                    <Link to={`/calculator/${risk}`}>
+                        {risk > 0 ? <button className="continue-btn">Continue</button> :
+                        <button className="continue-btn" disabled>Continue</button>}
+                        
                     </Link>
                  </ul>
+
                  <div className="img_table_wrapper">
                     <PreferenceTable preferences={preferences}/>
-                    <img src={logo} id="logo"/>
+                 </div>
+
+                 <div className="chart">
+                    <DonutChart preference={{
+                        "id": 30,
+                        "bonds": 10,
+                        "largeCap": 20,
+                        "midCap": 20,
+                        "foreign": 5,
+                        "smallCap": 15
+                    }}/>
                  </div>
              </div>           
          </div>

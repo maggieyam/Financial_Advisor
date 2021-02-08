@@ -1,4 +1,3 @@
-import { getByLabelText } from '@testing-library/react';
 import { PieChart } from 'react-minimal-pie-chart';
 
 const DonutChart = (props) => {
@@ -14,7 +13,7 @@ const DonutChart = (props) => {
             })
         }
     })
-    debugger
+
     return(
         <>
         <PieChart            
