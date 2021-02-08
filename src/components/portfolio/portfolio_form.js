@@ -1,5 +1,6 @@
 import React from 'react';
 import './portfolio.css';
+import PortfolioTable from './portfoilo_table';
 import { calculateTotalAmount, 
          calculateNewPortfolio, 
          calculateDiff,
@@ -27,7 +28,7 @@ class PortfolioForm extends React.Component {
         this.setState({newAmount, difference, recommendations});
     }
 
-    udpate(idx, e) {
+    update(idx, e) {
         e.preventDefault();
         const num = e.currentTarget.value;
         const currentAmount = this.state.currentAmount.slice();
@@ -53,15 +54,15 @@ class PortfolioForm extends React.Component {
         )
     }
 
-    getValue(value, sign) {
-        if (!value && value !== 0) {
-            return null;
-        } else if (value > 0 && sign) {
-            return `+${value}`;
-        } else {
-            return value;
-        }
-    }
+    // getValue(value, sign) {
+    //     if (!value && value !== 0) {
+    //         return null;
+    //     } else if (value > 0 && sign) {
+    //         return `+${value}`;
+    //     } else {
+    //         return value;
+    //     }
+    // }
 
     renderRecommendations(indices, titles) {
         return indices.map(index => {
@@ -83,76 +84,34 @@ class PortfolioForm extends React.Component {
 
     render(){
         const titles = [
-                        'Bonds', 
-                        'Large Cap', 
-                        'Mid Cap', 
-                        'Foreign', 
-                        'Small Cap'
-                        ];
-        const headers = [
-                         'Portfolio', 
-                         'Current Amount', 
-                         'Difference', 
-                         'New Amount', 
-                         'Recommendations'
-                        ]
+            'Bonds', 
+            'Large Cap', 
+            'Mid Cap', 
+            'Foreign', 
+            'Small Cap'
+            ];
+        
         const { currentAmount, difference, newAmount, recommendations } = this.state;
         const  values = Object.values(currentAmount);
         const indices = Object.keys(recommendations);
 
         return(
             <div>
-                <form onSubmit={(e) => this.handleSubmit(e)}>
+                <form onSubmit={(e) => this.handleSubmit(e)} className="portfolio-form">
                     <header>
                         <h2>Please select your portfolio</h2>
                         {values.includes(undefined) || values.includes(NaN) ? 
                         this.disableSubmitBtn() 
                         : this.enableSubmitBtn() }                       
                     </header>
-                    <table>
-                        <thead>
-                            <tr>
-                                {headers.map(header => 
-                                    <th>{header}</th>
-                                )}
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            {titles.map((title, idx) => {
-                                return(
-                                    <tr key={idx}>
-                                        <td>
-                                            {title}
-                                        </td>
-                                        <td>
-                                            <input 
-                                                type='text' 
-                                                onChange={(e) => this.udpate(idx, e)}/>
-                                        </td>
-                                        <td>
-                                            <input  
-                                                disabled 
-                                                value={this.getValue(difference[idx], true)}
-                                                className={difference[idx] >= 0 ? 'green' : 'red'}
-                                            />
-                                        </td>
-                                        <td>
-                                            <input 
-                                                disabled
-                                                value={this.getValue(newAmount[idx], false)}
-                                                className={'blue'}
-                                                />
-                                        </td>
-                                    </tr>                             
-                                )
-                            })}
-                        </tbody>
-                    </table>
+                    <PortfolioTable 
+                        state={this.state} 
+                        update={this.update.bind(this)}
+                        titles={titles}
+                        />
                     <ul>
                         {indices.length ? this.renderRecommendations(indices, titles) : null}                                          
                     </ul>
-
                 </form>
             </div>
         )

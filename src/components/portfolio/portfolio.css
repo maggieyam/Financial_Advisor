@@ -9,3 +9,10 @@
 .blue {
     color: blue;
 }
+
+.portfolio-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
