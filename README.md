@@ -1,9 +1,9 @@
-# Setup:
+## Setup:
   1. npm install
   2. npm start
   3. gitHub site: https://maggieyam.github.io/financial_advisor
 
-# Components:
+## Components:
 * Navbar
   1. Navbar is fixed on both pages.
   2. Clicking the Home button will navigate user to the home page.
