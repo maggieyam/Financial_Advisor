@@ -6,7 +6,6 @@ import PreferenceTable from './preference_table';
 import DonutChart from './preference_chart';
 import './preferences.css';
 import '../../resize.css';
-// import { PieChart } from 'react-minimal-pie-chart';
 
 class Preference extends React.Component {
     constructor(props){
@@ -14,10 +13,10 @@ class Preference extends React.Component {
         this.state = {
             id: 0,
             bonds: 0,
-            largeCap: 20,
-            midCap: 20,
-            foreign: 5,
-            smallCap: 15
+            largeCap: 0,
+            midCap: 0,
+            foreign: 0,
+            smallCap: 0
         };
         this.update = this.update.bind(this);
     }   
@@ -49,6 +48,7 @@ class Preference extends React.Component {
         const row = document.getElementById(`row-${id}`);
         const prevRow = document.getElementById(`row-${level}`);
         const continueBtn = document.getElementsByClassName('continue-btn');
+
         btn.style.backgroundColor = 'yellow';
         row.style.backgroundColor = 'yellow';
         continueBtn.disabled = false;
@@ -56,10 +56,7 @@ class Preference extends React.Component {
         if (prevLevel) prevLevel.style.backgroundColor = 'white';
         if (prevRow) this.updateRowColor(prevRow, level)
 
-
-            
         this.setState({id, bonds, largeCap, midCap, foreign, smallCap});
-
     }
 
     render() {
@@ -86,6 +83,7 @@ class Preference extends React.Component {
                                 />
                         )
                     })}
+
                     <Link to={`/calculator/${risk}`}>
                         {risk > 0 ? <button className="continue-btn">Continue</button> :
                         <button className="continue-btn" disabled>Continue</button>}
