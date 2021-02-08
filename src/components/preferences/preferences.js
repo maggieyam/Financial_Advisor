@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import RiskScaleButton from './risk_scale_button';
 import PreferenceTable from './preference_table';
 import DonutChart from './preference_chart';
+import './preferences.css';
+import '../../resize.css';
 // import { PieChart } from 'react-minimal-pie-chart';
 
 class Preference extends React.Component {

@@ -1,0 +1,117 @@
+@media only screen and (max-width: 800px) {
+    .risk-scale-btn{
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    .continue-btn {
+        width: 83px;
+        height: 48px;
+        font-size: 12px;
+    }
+
+    .risk-scale-label {
+        width: 560px;
+    }
+
+    h3, label {
+        font-size: 22px;
+    }
+
+    ul {
+        margin-top: 8px;
+    }
+
+    #high {
+        margin-right: 55px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .risk-scale-btn{
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .continue-btn {
+        width: 40px;
+        height: 32px;
+        font-size: 8px;
+    }
+
+    .risk-scale-label {
+        width: 410px;
+    }
+
+    h3, label {
+        font-size: 14px;
+    }
+
+    #high {
+        margin-right: 60px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .risk-scale-btn{
+        width: 25px;
+        height: 25px;
+        font-size: 10px;
+        border: 1px solid black;
+    }
+
+    button.continue-btn {
+        width: 44px;
+        height: 25px;
+        font-size: 7px;
+        border: 1px solid black;
+    }
+
+    .risk-scale-label {
+        width: 300px;
+    }
+
+    h3, label {
+        font-size: 10px;
+    }
+
+    #high {
+        margin-right: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 350px) {
+    .risk-scale-btn{
+        width: 17px;
+        height: 17px;
+        font-size: 6px;
+        border: 1px solid black;
+    }
+
+    button.continue-btn {
+        width: 30px;
+        height: 17px;
+        font-size: 4px;
+        border: 1px solid black;
+    }
+
+    .risk-scale-label {
+        width: 220px;
+    }
+
+    h3, label {
+        font-size: 8px;
+    }
+
+    ul {
+        margin-top: 2px;
+    }
+
+    #high {
+        margin-right: 10px;
+    }
+
+}

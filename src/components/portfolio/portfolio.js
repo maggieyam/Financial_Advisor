@@ -1,6 +1,9 @@
 import React from 'react';
 import PreferenceTable from '../preferences/preference_table';
 import ProfolioForm from './portfolio_form';
+import './portfolio.css';
+import '../../resize.css';
+
 class Portfolio extends React.Component{
      constructor(props){
         super(props);
@@ -22,8 +25,8 @@ class Portfolio extends React.Component{
         if (!preference) return null;
         const values = Object.values(preference);
         return (
-            <div>
-                <h2>Personal Portfolio</h2>
+            <div className="portfolio-container">
+                <h1>Personal Portfolio</h1>
                 <h2>Risk Level {preference.id}</h2>
                 <PreferenceTable preferences={[values]}/>
                 <ProfolioForm preference={values.slice(1)}/>

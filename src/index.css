@@ -45,7 +45,6 @@ tbody {
 table {
   display: table;
   border-color: grey;
-  margin: auto;
 }
 
 text {
@@ -58,7 +57,10 @@ text {
   width: 30%;
 }
 
-li {
-  width: 100%;
+
+
+input {
+  text-indent: 4px;
+  height: 20px;
 }
 

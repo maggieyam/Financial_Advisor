@@ -1,4 +1,5 @@
-import logo from './donut_chart.png';
+import './preferences.css';
+import '../../resize.css';
 
 const PreferenceTable = ({preferences}) => {
     return(

@@ -1,3 +1,6 @@
+import './portfolio.css';
+import '../../resize.css';
+
 const PortfolioTable = ({state, update, titles}) => {
     const headers = [
                     'Portfolio', 
@@ -8,26 +11,26 @@ const PortfolioTable = ({state, update, titles}) => {
  
     const { difference, newAmount } = state;
     return(
-        <table>
-            <thead>
+        <table className="portfolio-table">
+            <thead className="portfolio-thead">
                 <tr>
-                    {headers.map(header => 
-                        <th>{header}</th>
+                    {headers.map((header, idx) => 
+                        <th className="header" key={idx}>{header}</th>
                     )}
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody className="portfolio-tbody">
                 {titles.map((title, idx) => {
                     return(
                         <tr key={idx}>
-                            <td>{title}</td>
+                            <td >{title}</td>
                             {createInput(e => update(idx, e))}                           
                             {difference[idx] >= 0 ? 
-                                createDisabledInput(difference[idx], true, 'green') : 
-                                createDisabledInput(difference[idx], true, 'red')
+                                createDisabledInput(difference[idx], true, 'green inputs') : 
+                                createDisabledInput(difference[idx], true, 'red inputs')
                             }
-                            {createDisabledInput(newAmount[idx], false, 'blue')}
+                            {createDisabledInput(newAmount[idx], false, 'blue inputs')}
                         </tr>                             
                     )
                 })}
@@ -41,7 +44,8 @@ const createDisabledInput = (value, sign, className) => {
         <td>
             <input 
                 value={getValue(value, sign)} 
-                className={className}               
+                className={className} 
+                disabled              
                 />
         </td>
     )
@@ -52,6 +56,7 @@ const createInput = (callBack) => {
         <td>
             <input 
                 type='text' 
+                className="inputs"
                 onChange={callBack}/>
         </td>
     )
@@ -61,9 +66,9 @@ const  getValue = (value, sign) => {
         if (!value && value !== 0) {
             return null;
         } else if (value > 0 && sign) {
-            return `+${value}`;
+            return `+${value.toFixed(2)}`;
         } else {
-            return value;
+            return value.toFixed(2);
         }
     }
 

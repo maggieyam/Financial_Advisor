@@ -10,9 +10,84 @@
     color: blue;
 }
 
-.portfolio-form {
+.portfolio-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+
+.portfolio-form {
+    margin: auto;
+    width: 100%;
+}
+
+.portfolio-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+#rebalance-btn {
+    width: 104px;
+    height: 44px;
+    background-color: #73D0FF;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-right: 25px;
+}
+
+.portfolio-table {
+    width: 800px;
+}
+
+.portfolio-thead > tr, .portfolio-tbody > tr, .portfolio-tbody td{
+    display: flex;
+    justify-content: stretch;
+    width: 100%;
+    
+}
+.portfolio-thead > tr {
+    background: #f9f9f9;
+}
+
+.header {
+    width: 25%;
+}
+
+.inputs {
+    width: 100%
+}
+
+.portfolio-tbody td {
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 15px;
+    margin-left: 45px;
+}
+
+.recommendation {
+    text-align: left;
+}
+
+ul {
+    width: 95%;
+    min-height: 150px;
+    padding: 15px;
+    border: 2px solid #d3d3d3;
+    border-radius: 16px;
+}
+
+
+

@@ -1,5 +1,6 @@
 import React from 'react';
 import './portfolio.css';
+import '../../resize.css';
 import PortfolioTable from './portfoilo_table';
 import { calculateTotalAmount, 
          calculateNewPortfolio, 
@@ -11,7 +12,7 @@ class PortfolioForm extends React.Component {
     constructor() {
         super();
         this.state = {
-            currentAmount: [undefined, undefined, undefined, undefined, undefined],
+            currentAmount: [NaN, NaN, NaN, NaN, NaN],
             difference: [],
             newAmount: [],
             recommendations: {}
@@ -35,7 +36,7 @@ class PortfolioForm extends React.Component {
         
         if (num.match(/[^$,.\d]/)) {
             alert('error');
-            currentAmount[idx] = undefined;
+            currentAmount[idx] = NaN;
         } else {
             currentAmount[idx] = parseInt(num);
         }
@@ -43,6 +44,7 @@ class PortfolioForm extends React.Component {
     }
 
     enableSubmitBtn() {
+        
         return(
             <button id="rebalance-btn">Rebalance</button>
         )
@@ -65,7 +67,7 @@ class PortfolioForm extends React.Component {
                 const amount = asset[index];
                 return(
                     <li key={idx} className="recommendation-text">
-                        Transfer ${amount} from {outflow} to {inflowTitle}.
+                        Transfer ${amount.toFixed(2)} from {outflow} to {inflowTitle}.
                     </li>
                 )
             })
@@ -90,7 +92,7 @@ class PortfolioForm extends React.Component {
                 <form onSubmit={(e) => this.handleSubmit(e)} className="portfolio-form">
                     <header className="portfolio-header">
                         <h2>Please select your portfolio</h2>
-                        {values.includes(undefined) || values.includes(NaN) ? 
+                        {values.includes(NaN) ? 
                         this.disableSubmitBtn() : 
                         this.enableSubmitBtn() }                       
                     </header>
@@ -99,9 +101,12 @@ class PortfolioForm extends React.Component {
                         update={this.update.bind(this)}
                         titles={titles}
                         />
-                    <ul>
-                        {indices.length ? this.renderRecommendations(indices, titles) : null}                                          
-                    </ul>
+                    <div>
+                        <h2 className="recommendation">Recommendations</h2>
+                        <ul>
+                            {indices.length ? this.renderRecommendations(indices, titles) : null}                                          
+                        </ul>
+                    </div>
                 </form>
             </div>
         )

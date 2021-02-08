@@ -1,4 +1,6 @@
 import { PieChart } from 'react-minimal-pie-chart';
+import './preferences.css';
+import '../../resize.css';
 
 const DonutChart = (props) => {
     let data = [];
