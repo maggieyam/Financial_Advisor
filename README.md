@@ -2,6 +2,7 @@
   1. npm install
   2. npm start
   3. gitHub site: https://maggieyam.github.io/financial_advisor
+  4. video link: https://youtu.be/Q7PY_at3k6c
 
 ## Components:
 * Navbar
