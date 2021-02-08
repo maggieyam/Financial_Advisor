@@ -76,11 +76,11 @@ class PortfolioForm extends React.Component {
 
     render(){
         const titles = [
-            'Bonds $', 
-            'Large Cap $', 
-            'Mid Cap $', 
-            'Foreign $', 
-            'Small Cap $'
+            'Bonds', 
+            'Large Cap', 
+            'Mid Cap', 
+            'Foreign', 
+            'Small Cap'
             ];
         
         const { currentAmount, recommendations } = this.state;
