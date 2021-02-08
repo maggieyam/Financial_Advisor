@@ -54,16 +54,6 @@ class PortfolioForm extends React.Component {
         )
     }
 
-    // getValue(value, sign) {
-    //     if (!value && value !== 0) {
-    //         return null;
-    //     } else if (value > 0 && sign) {
-    //         return `+${value}`;
-    //     } else {
-    //         return value;
-    //     }
-    // }
-
     renderRecommendations(indices, titles) {
         return indices.map(index => {
             const outflow = titles[index];
@@ -91,7 +81,7 @@ class PortfolioForm extends React.Component {
             'Small Cap'
             ];
         
-        const { currentAmount, difference, newAmount, recommendations } = this.state;
+        const { currentAmount, recommendations } = this.state;
         const  values = Object.values(currentAmount);
         const indices = Object.keys(recommendations);
 
@@ -101,8 +91,8 @@ class PortfolioForm extends React.Component {
                     <header>
                         <h2>Please select your portfolio</h2>
                         {values.includes(undefined) || values.includes(NaN) ? 
-                        this.disableSubmitBtn() 
-                        : this.enableSubmitBtn() }                       
+                        this.disableSubmitBtn() : 
+                        this.enableSubmitBtn() }                       
                     </header>
                     <PortfolioTable 
                         state={this.state} 
