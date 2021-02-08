@@ -8,6 +8,13 @@ const PortfolioTable = ({state, update, titles}) => {
                     'Difference', 
                     'New Amount'
                     ]
+    const className = [
+                    'bonds',
+                    'lg',
+                    'mid',
+                    'foreign',
+                    'sm'
+                    ]
  
     const { difference, newAmount } = state;
     return(
@@ -24,7 +31,7 @@ const PortfolioTable = ({state, update, titles}) => {
                 {titles.map((title, idx) => {
                     return(
                         <tr key={idx}>
-                            <td >{title} $</td>
+                            <td className={className[idx]}>{title} $</td>
                             {createInput(e => update(idx, e))}                           
                             {difference[idx] >= 0 ? 
                                 createDisabledInput(difference[idx], true, 'green inputs') : 
