@@ -25,8 +25,38 @@ export const calculateRec = (portfolio) => {
     const recommendations = {};
     const outflow = []; 
     const inflow = [];  
-    splitAssets(portfolio, outflow, inflow, recommendations);
-    calculateRecData(portfolio, outflow, inflow, recommendations);
+    splitAssets(portfolio, outflow, inflow, recommendations);  
+
+    if (!outflow.length || !inflow.length) {
+        console.log('You have all transactions with the same sign!!!');
+        return {};
+    }
+
+    const count = outflow.length;
+    switch (count) {
+        case 1:
+            oneToMany(outflow[0], inflow, recommendations, portfolio);
+            return recommendations;
+        case 2:
+            if (removeOnePair(outflow, inflow, recommendations, portfolio)) {
+                oneToMany(outflow[0], inflow, recommendations, portfolio);
+            } else {
+                manyToMany(portfolio, outflow, inflow, recommendations);
+            }
+            return recommendations;
+        case 3:
+            if (removeOnePair(inflow, outflow)) {
+                manyToOne(inflow[0], outflow, recommendations, portfolio);
+            } else {
+                manyToMany(portfolio, outflow, inflow, recommendations);
+            }
+            return recommendations;
+        case 4:
+            manyToOne(inflow[0], outflow, recommendations, portfolio);
+            return recommendations
+        default:
+            break;
+    }
     return recommendations;
 }
 
@@ -41,7 +71,36 @@ const splitAssets = (portfolio, outflow, inflow, recommendations) => {
     })
 }
 
-const calculateRecData = (portfolio, outflow, inflow, recommendations) => {
+const oneToMany = (one, many, recommendations, portfolio) => {
+    recommendations[one] = [];
+    many.map(asset => {
+        recommendations[one].push({[asset]: portfolio[asset]});
+    })
+}
+
+const manyToOne = (one, many, recommendations, portfolio) => {
+    many.map(asset => {
+        recommendations[asset] = [{[one]: Math.abs(portfolio[asset])}]
+    })
+}
+
+const removeOnePair = (outflow, inflow, recommendations, portfolio) => {
+    for (let i = 0; i < outflow.length; i++) {
+        let idxO = outflow[i];
+        for (let j = 0; j < inflow.length; j++) {
+            let idxI = inflow[j];
+            if (portfolio[idxO] + portfolio[idxI] === 0) {
+                recommendations[idxO] = [{idxI: portfolio[idxI]}];
+                outflow.splice(i, 1);
+                inflow.splice(j, 1);
+                return true;
+            }
+        }
+    }
+    return false
+}
+
+const manyToMany = (portfolio, outflow, inflow, recommendations) => {
     let negative;
     let positive = portfolio[inflow[0]];
 
