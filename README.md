@@ -35,6 +35,17 @@
         * Portfolio table
   5. Portfolio action file is empty, I kept it there to show what I would usually do.
 
+* Calculation:
+    1. To optimize the transaction, I partition my assets into 2 piles: 
+        * cash outflow
+        * cash inflow
+    2. With the assumption with 5 assets in our portfolio, we can run into senarios:
+        a. partition: 1 and 4 => In this case, we can quickly conclude that there's only one way for transactions.
+        b. partition: 2 and 3 => In this case, we need to find if there's a value that can cancel each other by one step.
+                                 By doing so, we can save one transaction for our clients.
+        c. partition: 0 and 5 => An error has occured.
+    3. This approach only works if we have 5 assets. For more than 5, I need to find a way to generalize how to minmize the transaction.
+
 * Assumuptions:
     * There are only 10 risk levels.
     * There are only 5 assets in each portfolio.
