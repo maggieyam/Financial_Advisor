@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/financial_advisor/static/css/main.187b9a6d.chunk.css",
-    "main.js": "/financial_advisor/static/js/main.b1582651.chunk.js",
-    "main.js.map": "/financial_advisor/static/js/main.b1582651.chunk.js.map",
+    "main.js": "/financial_advisor/static/js/main.ae7f93a2.chunk.js",
+    "main.js.map": "/financial_advisor/static/js/main.ae7f93a2.chunk.js.map",
     "runtime-main.js": "/financial_advisor/static/js/runtime-main.91e63730.js",
     "runtime-main.js.map": "/financial_advisor/static/js/runtime-main.91e63730.js.map",
-    "static/js/2.8f9fc578.chunk.js": "/financial_advisor/static/js/2.8f9fc578.chunk.js",
-    "static/js/2.8f9fc578.chunk.js.map": "/financial_advisor/static/js/2.8f9fc578.chunk.js.map",
+    "static/js/2.19528d29.chunk.js": "/financial_advisor/static/js/2.19528d29.chunk.js",
+    "static/js/2.19528d29.chunk.js.map": "/financial_advisor/static/js/2.19528d29.chunk.js.map",
     "index.html": "/financial_advisor/index.html",
     "static/css/main.187b9a6d.chunk.css.map": "/financial_advisor/static/css/main.187b9a6d.chunk.css.map",
-    "static/js/2.8f9fc578.chunk.js.LICENSE.txt": "/financial_advisor/static/js/2.8f9fc578.chunk.js.LICENSE.txt"
+    "static/js/2.19528d29.chunk.js.LICENSE.txt": "/financial_advisor/static/js/2.19528d29.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.91e63730.js",
-    "static/js/2.8f9fc578.chunk.js",
+    "static/js/2.19528d29.chunk.js",
     "static/css/main.187b9a6d.chunk.css",
-    "static/js/main.b1582651.chunk.js"
+    "static/js/main.ae7f93a2.chunk.js"
   ]
 }
