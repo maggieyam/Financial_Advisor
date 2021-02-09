@@ -34,7 +34,11 @@
         * Portfolio form
         * Portfolio table
   5. Portfolio action file is empty, I kept it there to show what I would usually do.
-
+  
+  
+  ![](financial_advisor.gif)
+  
+  
 * Calculation:
     1. To optimize the transaction, I partition my assets into 2 piles: 
         * cash outflow
