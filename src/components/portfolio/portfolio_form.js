@@ -65,6 +65,7 @@ class PortfolioForm extends React.Component {
 
                 const inflowTitle = titles[index];
                 const amount = asset[index];
+                debugger
                 return(
                     <li key={idx} className="recommendation-text">
                         Transfer ${amount.toFixed(2)} from {outflow} to {inflowTitle}.

@@ -90,7 +90,7 @@ const removeOnePair = (outflow, inflow, recommendations, portfolio) => {
         for (let j = 0; j < inflow.length; j++) {
             let idxI = inflow[j];
             if (portfolio[idxO] + portfolio[idxI] === 0) {
-                recommendations[idxO] = [{idxI: portfolio[idxI]}];
+                recommendations[idxO] = [{[idxI]: portfolio[idxI]}];
                 outflow.splice(i, 1);
                 inflow.splice(j, 1);
                 return true;
